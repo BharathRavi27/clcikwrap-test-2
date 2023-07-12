@@ -1,81 +1,57 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Ecommerce Signup</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f1f1f1;
-    }
-    
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #ffffff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    h1 {
-      text-align: center;
-    }
-    
-    .form-group {
-      margin-bottom: 20px;
-    }
-    
-    .form-group label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    
-    .form-group input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    
-    .form-group button {
-      width: 100%;
-      padding: 10px;
-      background-color: #4CAF50;
-      border: none;
-      color: #fff;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    
-    .form-group button:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Sign Up</h1>
-    <form id="signup-form">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" required>
-      </div>
-      <div class="form-group">
+
+
+<html lang="en">
+  <head>
+    <style>
+        #clickwrap-host {
+            font-family: "Space Grotesk", sans-serif;
+        }
+        .sd-clickwrap-checkbox {
+          margin-right: 10px;
+        }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpotDraft Embedded E-sign</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <main class="row">
+      <div
+        class="col-md-6 align-items-center d-flex flex-column form-section mt-4"
+      >
+        <div class="mt-4 mb-2 w-100">
+          <div class="d-flex align-items-center justify-content-start mb-2">
+            <h1 class="mb-0 mx-0 ff-grotesk">Join Us Today</h1></div>
+          <p class="mb-4 ff-grotesk">Accelerate Your Fashion Business. Join Our
+            Exclusive Network.
+          </p>
+
+        </div>
+        <form
+        id="form"
+          class="d-flex w-100 flex-col gap-2"
+          action="/sign-up"
+          method="POST"
+        >
+          <div class="d-flex flex-row gap-3">
+            <div class="flex-grow-1">
+              <label for="first_name">Name</label>
+              <input id="name" required="true" type="text" name="first_name" />
+            </div>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" required="true" type="text" name="email" />
+          </div>
         <span id="clickwrap-host"></span>
-        <button type="submit">Sign Up</button>
+          <div><button id="button" type="submit">Submit</button></div>
+        </form>
       </div>
-    </form>
-  </div>
+      <div class="col-md-6 d-md-block d-none p-0">
+        <img src="images/cover.jpg" class="cover-image"></div>
+      </div>
+    </main>
 <script type="module" src="https://sdk.spotdraft.com/clickwrap/v1/sdk.js"></script>
     <script type="module">
         window.addEventListener("sdClickwrapLoaded", function () {
@@ -115,5 +91,5 @@
             }
         });
     </script>
-</body>
+  </body>
 </html>
